@@ -1,0 +1,25 @@
+{
+   "rules": {
+    ".read": "true",
+    ".write": "true",
+    "contacts": {
+            "$contact": {
+                "businessNumber": {
+                ".validate": "newData.isString() && newData.val().matches(/[0-9]{9}/)  && newData.val().length == 9 "
+              },
+              "businessName": {
+                ".validate": "newData.isString() && newData.val().length < 49 && newData.val().length > 1"
+              },
+              "primaryBusiness": {
+                ".validate": "newData.isString() && ( newData.val()=='Fisher' || newData.val()== 'Distributor' || newData.val()=='Processor'		 || newData.val()=='Fish Monger')"
+              },
+              "address": {
+                ".validate": "newData.isString() && newData.val().length < 50 && newData.val().length > 0"
+              },
+              "province": {
+                ".validate": "newData.isString() && ( newData.val()=='AB'   || newData.val()=='BC' || newData.val()=='MB'  || newData.val()=='NB' || newData.val()=='NL' ||      newData.val()== 'NS' || newData.val()=='NT' ||   newData.val()=='NU'|| newData.val()=='ON' ||     newData.val()== 'PE' || newData.val()=='QC' || newData.val()=='SK' || newData.val()=='YT'||   newData.val()==' ')"
+              }
+        }
+    }
+  }
+}
